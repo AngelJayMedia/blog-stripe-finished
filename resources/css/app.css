@@ -1,0 +1,151 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+    .overlay {
+        background: linear-gradient(50deg, #70e1f5, #ffd194);
+        opacity: .9;
+    }
+
+    .post-container article {
+        gap: 8rem;
+        margin: 8rem 0;
+    }
+
+    .post-container article:nth-child(2n+1) {
+        flex-direction: row-reverse;
+    }
+
+    /* Post */
+    .post-image {
+        @apply relative flex-1 pb-8 pr-8;
+    }
+
+    .post-image::before {
+        position: absolute;
+        content: "";
+        right: 0;
+        bottom:0;
+        width: calc(100% - 2rem);
+        height: calc(100% - 2rem);
+        background: #f2f2f2;
+        z-index: -1;
+    }
+
+    /* Headings */
+    .heading {
+        @apply pb-2 mb-4 font-serif text-2xl font-extrabold tracking-wider border-b border-gray-500;
+    }
+
+    .hero-header {
+        height: 80vh;
+    }
+
+    /* Sidenav */
+
+    .side-title::before {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 5px;
+        background-color: #2B91BF;
+        left: -1.5rem;
+        top: 0;
+    }
+
+    /* Tags */
+
+    .text-shadow {
+        text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Curves */
+    .curve.curve-bottom::after,
+    .curve.curve-bottom::before {
+        bottom: 0;
+    }
+
+    .curve.curve-center::after {
+        border-left: 50vw solid transparent;
+    }
+
+    .curve::after {
+        right: 0;
+        border-left: 30vw solid transparent;
+    }
+
+    .curve::after,
+    .curve::before {
+        content: '';
+        width: 0;
+        height: 0;
+        border-bottom: 50px solid #fff;
+        position: absolute;
+    }
+
+    .curve.curve-center::before {
+        border-right: 50vw solid transparent;
+    }
+
+    .curve::before {
+        left: 0;
+        border-right: 70vw solid transparent;
+    }
+
+    .curve.curve-gray-t::after,
+    .curve.curve-gray-t::before {
+        border-top: 50px solid #f9f9f9;
+    }
+
+    .curve.curve-top::after {
+        border-left: 70vw solid transparent;
+    }
+
+    .curve.curve-top::after,
+    .curve.curve-top::before {
+        top: 0;
+        border-top: 50px solid #fff;
+        border-bottom: 0;
+    }
+
+    .curve::after {
+        right: 0;
+        border-left: 30vw solid transparent;
+    }
+
+    .curve::after,
+    .curve::before {
+        content: '';
+        width: 0;
+        height: 0;
+        border-bottom: 50px solid #fff;
+        position: absolute;
+    }
+
+    .curve.curve-top::before {
+        border-right: 30vw solid transparent;
+    }
+
+    .curve::before {
+        left: 0;
+        border-right: 70vw solid transparent;
+    }
+
+    .curve.curve-top {
+        left: 0;
+        top: -1px;
+        width: 100%;
+    }
+
+    .curve.curve-bottom {
+        left: 0;
+        bottom: -1px;
+        width: 100%;
+    }
+
+    .curve {
+        position: absolute;
+        z-index: 7;
+    }
+}
